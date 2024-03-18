@@ -25,17 +25,29 @@ const teamMembers = []; //array
 //stampo a console l'array
 console.log(teamMembers);
 
-//MILESTONE 1
-// stampare su console per ogni membro le informazioni contenute nelle proprietà dell'oggetto 
+//MILESTONE 1 / MILESTONE 2 
+// stampare su console per ogni membro le informazioni contenute nelle proprietà dell'oggetto / stampare gli oggetti sul DOM
+// inizializzo una variabile associata all'elemerto row del dom
+const rowMembers = document.querySelector('.row') // DOM object
+
     //creo un ciclo che scorre tutta la lunghezza dell'array
     for (let i = 0; i < teamMembers.length; i++){
+        // dichiaro una variabile che mi serve per generare un nuovo elemento nel dom
+        const cardData = document.createElement('div');
+
+        // dichiaro la classe dell'elemento appena creato
+        cardData.className = ('card');
+
         //dichiaro una variabile che contiene l'elemento attuale dell'array alla posizione i
         const thisTeamMember = teamMembers[i];
 
-        //stampo i valori delle proprietà name role e imgPath su 3 righe diverse
-        console.log(thisTeamMember.name);
-        console.log(thisTeamMember.role);
-        console.log(thisTeamMember.imgPath);
+        // inserisco all'interno dell'html le stringhe contenute nei valori dell'oggetto alla posizione i dell array                
+        cardData.innerHTML = thisTeamMember.imgPath;
+        cardData.innerHTML += thisTeamMember.name;
+        cardData.innerHTML += thisTeamMember.role;
+        
+        //inserisco l'elemento creato all'interno del DOM
+        rowMembers.append(cardData);
     }
 
 
