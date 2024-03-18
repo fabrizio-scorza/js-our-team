@@ -22,8 +22,6 @@ const teamMembers = []; //array
     // pusho nell'array gli oggetti che ho creato 
     teamMembers.push(wayne, angelaC, walter, angelaL, scott, barbara);
 
-//stampo a console l'array
-console.log(teamMembers);
 
 //MILESTONE 1 / MILESTONE 2 
 // stampare su console per ogni membro le informazioni contenute nelle proprietà dell'oggetto / stampare gli oggetti sul DOM
@@ -31,28 +29,10 @@ console.log(teamMembers);
 const rowMembers = document.querySelector('.row') // DOM object
 
     //creo un ciclo che scorre tutta la lunghezza dell'array
-    for (let i = 0; i < teamMembers.length; i++){
-        // dichiaro una variabile che mi serve per generare un nuovo elemento nel dom
-        const cardData = document.createElement('div');
-
-        // dichiaro la classe dell'elemento appena creato
-        cardData.className = ('card');
-
-        //dichiaro una variabile che contiene l'elemento attuale dell'array alla posizione i
-        const thisTeamMember = teamMembers[i];
-
-        // inserisco all'interno dell'html le stringhe contenute nei valori dell'oggetto alla posizione i dell array                
-        cardData.innerHTML = `
-            <span> ${thisTeamMember.imgPath}</span>
-            <h3> ${thisTeamMember.name}</h3>
-            <h4> ${thisTeamMember.role}</h4>
-        ` 
-
-        //inserisco l'elemento creato all'interno del DOM
-        rowMembers.append(cardData);
+    for (let i = 0; i < teamMembers.length; i++){   
+       //passo alla funzione l'elemento attuale dell'array alla posizione i
+         createCard(teamMembers[i]);         
     }
-
-
 
 //funzione che genera gli oggetti con i dati passati 
 function generateTeamMember(newName, newRole, newImgPath){
@@ -64,4 +44,21 @@ function generateTeamMember(newName, newRole, newImgPath){
     }
 
     return teamMember;
+}
+
+function createCard(memberAtCurrentIndex){
+    // dichiaro una variabile che mi serve per generare un nuovo elemento nel dom
+    const cardData = document.createElement('div');
+
+    // dichiaro la classe dell'elemento appena creato
+    cardData.className = ('card');
+
+    // inserisco all'interno dell'html le stringhe contenute nei valori dell'oggetto alla posizione i dell array                
+    cardData.innerHTML = `
+        <img src="${memberAtCurrentIndex.imgPath}">
+        <h3> ${memberAtCurrentIndex.name}</h3>
+        <h4> ${memberAtCurrentIndex.role}</h4>
+    ` 
+    //inserisco l'elemento creato all'interno del DOM
+    rowMembers.append(cardData);
 }
