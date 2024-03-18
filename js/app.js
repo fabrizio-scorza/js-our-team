@@ -5,7 +5,7 @@
 // BONUS 1 trasformare la stringa foto in un immagine effettiva
 // BONUS 2 organizzare i singoli membri in card/schede
 
-// MILESTONE 1
+// MILESTONE 0
 // inizializzazione della variabile array vuota
 const teamMembers = []; //array
 
@@ -25,6 +25,18 @@ const teamMembers = []; //array
 //stampo a console l'array
 console.log(teamMembers);
 
+//MILESTONE 1
+// stampare su console per ogni membro le informazioni contenute nelle proprietà dell'oggetto 
+    //creo un ciclo che scorre tutta la lunghezza dell'array
+    for (let i = 0; i < teamMembers.length; i++){
+        //dichiaro una variabile che contiene l'elemento attuale dell'array alla posizione i
+        const thisTeamMember = teamMembers[i];
+
+        //stampo i valori delle proprietà name role e imgPath su 3 righe diverse
+        console.log(thisTeamMember.name);
+        console.log(thisTeamMember.role);
+        console.log(thisTeamMember.imgPath);
+    }
 
 
 
