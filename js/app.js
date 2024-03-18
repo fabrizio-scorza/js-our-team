@@ -42,10 +42,12 @@ const rowMembers = document.querySelector('.row') // DOM object
         const thisTeamMember = teamMembers[i];
 
         // inserisco all'interno dell'html le stringhe contenute nei valori dell'oggetto alla posizione i dell array                
-        cardData.innerHTML = thisTeamMember.imgPath;
-        cardData.innerHTML += thisTeamMember.name;
-        cardData.innerHTML += thisTeamMember.role;
-        
+        cardData.innerHTML = `
+            <span> ${thisTeamMember.imgPath}</span>
+            <h3> ${thisTeamMember.name}</h3>
+            <h4> ${thisTeamMember.role}</h4>
+        ` 
+
         //inserisco l'elemento creato all'interno del DOM
         rowMembers.append(cardData);
     }
