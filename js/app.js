@@ -12,12 +12,12 @@ const teamMembers = []; //array
 // inserimento dei dati tramite funzione
     //richiamo la funzione che popola l'oggetto passando come parametri i dati che abbiamo in tabella
         //dichiaro per ogni elemento che devo inserire una variabile
-        const wayne = generateTeamMember('Wayne Barnett', 'Founder & CEO', './img/wayne-barnett-founder-ceo.jpg' ); //object
-        const angelaC = generateTeamMember('Angela Caroll', 'Chief Editor', './img/angela-caroll-chief-editor.jpg' ); //object
-        const walter = generateTeamMember('Walter Gordon', 'Office Manager', './img/walter-gordon-office-manager.jpg' ); //object
-        const angelaL = generateTeamMember('Angela Lopez', 'Social Media Manager', './img/angela-lopez-social-media-manager.jpg' ); //object
-        const scott = generateTeamMember('Scott Estrada', 'Developer', './img/scott-estrada-developer.jpg' ); //object
-        const barbara = generateTeamMember('Barbara Ramos', 'Graphic Designer', './img/barbara-ramos-graphic-designer.jpg' ); //object
+        const wayne = generateTeamMember('Wayne Barnett', 'Founder & CEO', './css/img/wayne-barnett-founder-ceo.jpg' ); //object
+        const angelaC = generateTeamMember('Angela Caroll', 'Chief Editor', './css/img/angela-caroll-chief-editor.jpg' ); //object
+        const walter = generateTeamMember('Walter Gordon', 'Office Manager', './css/img/walter-gordon-office-manager.jpg' ); //object
+        const angelaL = generateTeamMember('Angela Lopez', 'Social Media Manager', './css/img/angela-lopez-social-media-manager.jpg' ); //object
+        const scott = generateTeamMember('Scott Estrada', 'Developer', './css/img/scott-estrada-developer.jpg' ); //object
+        const barbara = generateTeamMember('Barbara Ramos', 'Graphic Designer', './css/img/barbara-ramos-graphic-designer.jpg' ); //object
 
     // pusho nell'array gli oggetti che ho creato 
     teamMembers.push(wayne, angelaC, walter, angelaL, scott, barbara);
@@ -48,17 +48,23 @@ function generateTeamMember(newName, newRole, newImgPath){
 
 function createCard(memberAtCurrentIndex){
     // dichiaro una variabile che mi serve per generare un nuovo elemento nel dom
-    const cardData = document.createElement('div');
+    const cardCol = document.createElement('div');
 
     // dichiaro la classe dell'elemento appena creato
-    cardData.className = ('card');
+    cardCol.className = ('col-4');
 
     // inserisco all'interno dell'html le stringhe contenute nei valori dell'oggetto alla posizione i dell array                
-    cardData.innerHTML = `
-        <img src="${memberAtCurrentIndex.imgPath}">
-        <h3> ${memberAtCurrentIndex.name}</h3>
-        <h4> ${memberAtCurrentIndex.role}</h4>
+    cardCol.innerHTML = `
+        <div class="card">
+            <div class="card-head">
+                <img src="${memberAtCurrentIndex.imgPath}">
+            </div>
+            <div class="card-body">
+                <h3> ${memberAtCurrentIndex.name}</h3>
+                <h4> ${memberAtCurrentIndex.role}</h4>
+            </div>
+        </div>
     ` 
     //inserisco l'elemento creato all'interno del DOM
-    rowMembers.append(cardData);
+    rowMembers.append(cardCol);
 }

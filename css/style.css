@@ -1,0 +1,54 @@
+/**RESET********************************************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+    display: block;
+}
+
+/**LAYOUT********************************************************/
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-4{
+    width: calc(4*100%/12);
+}
+
+/**BODY**********************************************************/
+body{
+    background: linear-gradient(209deg, rgba(221,221,221,1) 0%, rgba(166,166,166,1) 25%, rgba(166,166,166,1) 75%, rgba(221,221,221,1) 100%);
+    text-align: center;
+}
+
+.container h1, .container p {
+    margin: 20px 0;
+}
+
+.card{
+    padding: 15px;
+}
+.card-head{
+    border: 12px solid white;
+    box-shadow: 8px 12px 10px black;
+}
+.card-body{
+    background-color: white;
+    box-shadow: 8px 12px 10px black;
+}
+.card-body h3{
+    padding-top: 25px;
+    font-size: 22px;
+}
+.card-body h4{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
